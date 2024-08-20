@@ -1,0 +1,21 @@
+p {
+  padding: 0;
+  margin: 0;
+}
+
+.input-annotation {
+  overflow-wrap: break-word;
+  font-size: var(--font-medium);
+  line-height: 20px;
+  font-weight: 400;
+  color: var(--annotation-color);
+}
+
+.input-annotation--error {
+  color: #D92D20;
+}
+
+
+.input-annotation--disabled {
+  color: var(--border-color);
+}

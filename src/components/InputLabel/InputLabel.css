@@ -1,0 +1,36 @@
+
+.input-label {
+  color: var(--main-color);
+  font-size: var(--font-label-medium);
+  font-weight: 500;
+  line-height: 24px;
+  overflow-wrap: break-word;
+}
+
+.input-label--sm {
+  font-size: var(--font-label-sm);
+}
+
+.input-label--disabled {
+  color: var(--placeholder--color);
+}
+
+.label-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.label-wrapper--side {
+  flex: auto
+}
+
+.icon--hover {
+  visibility: hidden;
+}
+.icon--visible {
+  visibility: visible;
+}
+
+.label-wrapper:hover .icon--hover  {
+  visibility: visible;
+}
