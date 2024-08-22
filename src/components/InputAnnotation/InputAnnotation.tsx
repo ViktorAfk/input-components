@@ -1,12 +1,14 @@
 import React from 'react';
 import './InputAnnotation.css';
 import { getGeneratedClasses } from '../../helper';
-import { InputAnnotationProps } from '../../types/InputAnnotation.type';
-import { CommonProps } from '../../types/common.type';
+import { InputAnnotationProps } from '../types/InputAnnotation.type';
+import { CommonProps } from '../types/common.type';
 
 type Props = InputAnnotationProps & Pick<CommonProps, 'error' | 'disabled'>;
 
 export const InputAnnotation: React.FC<Props> = ({
+  errorStyle,
+  descriptionStyle,
   error = false,
   disabled,
   hint = false,
@@ -21,10 +23,17 @@ export const InputAnnotation: React.FC<Props> = ({
   return (
     <>
       {error && !hint && errorMessage && (
-        <p className={`input-annotation ${currentClasses}`}>{errorMessage}</p>
+        <p style={errorStyle} className={`input-annotation ${currentClasses}`}>
+          {errorMessage}
+        </p>
       )}
       {hint && !error && description && (
-        <p className={`input-annotation ${currentClasses}`}>{description}</p>
+        <p
+          style={descriptionStyle}
+          className={`input-annotation ${currentClasses}`}
+        >
+          {description}
+        </p>
       )}
     </>
   );

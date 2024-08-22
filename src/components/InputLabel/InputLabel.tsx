@@ -1,13 +1,13 @@
 import React from 'react';
 import { getGeneratedClasses } from '../../helper';
 import './InputLabel.css';
+import { AsteriskIcon, InfoIcon } from '../icons/Icons';
 import {
   InputLabelProps,
   OptionalTextField,
   RequiredTextField,
-} from '../../types/InputLabel.type';
-import { CommonProps } from '../../types/common.type';
-import { AsteriskIcon, InfoIcon } from '../icons/Icons';
+} from '../types/InputLabel.type';
+import { CommonProps } from '../types/common.type';
 
 const getTextFieldOption = (
   fieldValue: RequiredTextField | OptionalTextField,
@@ -34,13 +34,14 @@ const getTextFieldOption = (
 type Props = InputLabelProps & Pick<CommonProps, 'error' | 'disabled'>;
 
 export const InputLabel: React.FC<Props> = ({
+  labelStyles,
   elementSize = 'medium',
   labelText,
   disabled = false,
-  error = false,
   textField,
   infoIcon,
   labelPosition = 'top',
+  ...props
 }) => {
   const currentClasses = getGeneratedClasses(
     { elementSize, disabled },
@@ -57,9 +58,13 @@ export const InputLabel: React.FC<Props> = ({
           : 'label-wrapper'
       }
     >
-      <label className={`input-label ${currentClasses}`}>
+      <label
+        {...props}
+        style={labelStyles}
+        className={`input-label ${currentClasses}`}
+      >
         {labelText}
-        <span>{error && fieldOption}</span>
+        <span>{fieldOption}</span>
       </label>
       {infoIcon && (
         <InfoIcon

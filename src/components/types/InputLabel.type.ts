@@ -18,6 +18,7 @@ export type InputLabelProps = {
   elementSize?: 'sm' | 'medium';
   labelText: string;
   textField: RequiredTextField | OptionalTextField;
+  labelStyles?: React.CSSProperties;
 } & React.DetailedHTMLProps<
   React.LabelHTMLAttributes<HTMLLabelElement>,
   HTMLLabelElement

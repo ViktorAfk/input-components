@@ -3,7 +3,7 @@ import {
   CommonProps,
   Size,
   SizeClasses,
-} from './types/common.type';
+} from './components/types/common.type';
 
 const checkSize = (inputSize: Size, currentClass: string) => {
   const { Sm, Large, XL } = SizeClasses;

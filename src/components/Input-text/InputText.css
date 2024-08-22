@@ -73,6 +73,7 @@
 
 .input-text--disabled {
   color:var(--border-color);
+  cursor: not-allowed;
 }
 
 .input-text--disabled::placeholder {

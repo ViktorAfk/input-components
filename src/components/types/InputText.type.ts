@@ -5,6 +5,8 @@ export type InputTextProps = DetailedHTMLProps<
   HTMLInputElement
 > &
   React.DOMAttributes<HTMLInputElement> & {
-    value: string;
-    onChange: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+    value?: string;
+    onChange?: ({ target }: React.ChangeEvent<HTMLInputElement>) => void;
+    placeholderText?: string;
+    inputStyles?: React.CSSProperties;
   };

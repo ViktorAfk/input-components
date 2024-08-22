@@ -2,13 +2,15 @@ import type React from 'react';
 import { useEffect, useRef } from 'react';
 import './InputText.css';
 import { getCurrentPadding, getGeneratedClasses } from '../../helper';
-import { InputTextProps } from '../../types/InputText.type';
-import { CommonProps } from '../../types/common.type';
 import { HelpIcon, SearchIcon, ShortKeyIcon } from '../icons/Icons';
+import { InputTextProps } from '../types/InputText.type';
+import { CommonProps } from '../types/common.type';
 
 type Props = InputTextProps & CommonProps;
 
 export const InputText: React.FC<Props> = ({
+  inputStyles,
+  placeholderText = '',
   labelPosition = 'top',
   value,
   elementSize = 'medium',
@@ -20,6 +22,7 @@ export const InputText: React.FC<Props> = ({
   iconBefore = false,
   iconAfter = false,
   shortKey = false,
+  required = false,
   ...props
 }) => {
   const inputRef = useRef<HTMLInputElement>(null);
@@ -79,6 +82,7 @@ export const InputText: React.FC<Props> = ({
         style={{
           paddingLeft: paddingLeft,
           paddingRight: paddingRight,
+          ...inputStyles,
         }}
         ref={inputRef}
         className={`input-text ${currentClasses}`}
@@ -86,7 +90,8 @@ export const InputText: React.FC<Props> = ({
         {...props}
         value={value}
         onChange={onChange}
-        placeholder={'Input...'}
+        placeholder={placeholderText}
+        required={required}
       />
     </div>
   );

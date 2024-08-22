@@ -11,7 +11,8 @@ function App() {
     <div className={'container'}>
       <form>
         <InputGroup
-          disabled
+          quiet
+          disabled={false}
           labelPosition="top"
           error={false}
           hint={true}
