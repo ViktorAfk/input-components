@@ -253,3 +253,66 @@ export const SmallLabelSide: Story = {
     </div>
   ),
 };
+
+export const DarkDefault: Story = {
+  args: {
+    labelProps: {
+      htmlFor: 'email',
+    },
+    inputProps: {
+      id: 'email',
+    },
+    labelText: 'Email',
+    placeholderText: 'Input',
+    infoIcon: {
+      visibility: 'always',
+      infoMessage: 'Enter your email',
+    },
+    textField: {
+      fieldOption: 'optional',
+      value: 'none',
+    },
+    iconBefore: true,
+    iconAfter: true,
+    shortKey: true,
+    hint: true,
+    description: 'Please enter your email for sign in',
+    errorMessage: "This field shouldn't be empty",
+  },
+  render: (args) => (
+    <div className="dark--schema" style={{ height: '200px', padding: '50px' }}>
+      <InputGroup {...args} />
+    </div>
+  ),
+};
+
+export const DarkError: Story = {
+  args: {
+    ...DarkDefault.args,
+    hint: false,
+    error: true,
+  },
+  render: (args) => (
+    <div
+      className={'dark--schema'}
+      style={{ height: '200px', padding: '50px' }}
+    >
+      <InputGroup {...args} />
+    </div>
+  ),
+};
+
+export const DarkDisabled: Story = {
+  args: {
+    ...DarkDefault.args,
+    disabled: true,
+  },
+  render: (args) => (
+    <div
+      className={'dark--schema'}
+      style={{ height: '200px', padding: '50px' }}
+    >
+      <InputGroup {...args} />
+    </div>
+  ),
+};

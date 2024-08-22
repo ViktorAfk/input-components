@@ -6,7 +6,7 @@
   line-height: 20px;
   color: var(--main-color);
   border: var(--default-border);
-  background-color: white;
+  background-color: var(--input-background);
   padding: var(--padding-m);
   font-size: var(--font-medium);
   border-radius: 4px;
@@ -17,12 +17,12 @@
 
 
 .input-text:focus-visible {
-  border: 1px solid #84caff;
-  box-shadow: 0px 0px 0px 4px #2e90fa3d;
+  border: 1px solid var(--focus-border);
+  box-shadow: var(--shadow-border-focus);
 }
 
 .input-text::placeholder {
-  color: var(--placeholder--color);
+  color: var(--placeholder-color);
 }
 
 .input-text--sm {
@@ -72,12 +72,12 @@
 }
 
 .input-text--disabled {
-  color:var(--border-color);
+  color:var(--disabled-color);
   cursor: not-allowed;
 }
 
 .input-text--disabled::placeholder {
-  color:var(--border-color);
+  color:var(--disabled-color);
 }
 
 .wrapper {

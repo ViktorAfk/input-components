@@ -11,18 +11,18 @@ function App() {
     <div className={'container'}>
       <form>
         <InputGroup
-          quiet
+          placeholderText="Enter your email"
           disabled={false}
           labelPosition="top"
           error={false}
           hint={true}
-          description="hi guys"
+          description="Enter your email please for login"
           errorMessage="Enter your email please for login"
           iconBefore
           iconAfter
           shortKey
           infoIcon={{ visibility: 'always', infoMessage: 'Hello, guys' }}
-          textField={{ fieldOption: 'required', value: 'asterisk' }}
+          textField={{ fieldOption: 'optional', value: 'none' }}
           labelText={'Enter your email please for login'}
           value={query}
           onChange={onHandleChange}

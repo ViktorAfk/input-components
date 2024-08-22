@@ -30,6 +30,7 @@ type Props = Pick<
   };
 
 export const InputGroup: React.FC<Props> = ({
+  placeholderText,
   errorStyle,
   descriptionStyle,
   inputStyles,
@@ -75,6 +76,7 @@ export const InputGroup: React.FC<Props> = ({
         />
         <div style={{ flex: labelPosition === 'side' ? 1 : '' }}>
           <InputText
+            placeholderText={placeholderText}
             inputStyles={inputStyles}
             labelPosition={labelPosition}
             shortKey={shortKey}

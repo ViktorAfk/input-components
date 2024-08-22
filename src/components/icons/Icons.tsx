@@ -7,13 +7,13 @@ type SearchProps = {
 
 const colorPicker = (error: boolean, disabled: boolean) => {
   if (error) {
-    return '#D92D20';
+    return 'var(--icon-error)';
   }
 
   if (disabled) {
-    return '#D1D1D6';
+    return 'var(--icon-disabled)';
   }
-  return '#A0A0AB';
+  return 'var(--icon-color)';
 };
 
 export const SearchIcon: React.FC<SearchProps> = ({
@@ -71,7 +71,7 @@ export const ShortKeyIcon: React.FC = () => {
   return (
     <div
       style={{
-        border: '1px solid #E4E4E7',
+        border: '1px solid var(--shortkey-border)',
         display: 'inline-flex',
         alignItems: 'center',
         paddingInline: '6px',
@@ -84,7 +84,7 @@ export const ShortKeyIcon: React.FC = () => {
         height={16}
         viewBox="0 0 20 20"
         width={16}
-        fill={'#70707B'}
+        fill={'var(--shortkey-color)'}
         role={'note'}
       >
         <g>
@@ -95,7 +95,13 @@ export const ShortKeyIcon: React.FC = () => {
         </g>
         K
       </svg>
-      <span style={{ color: '#70707B', fontSize: 16, lineHeight: '100%' }}>
+      <span
+        style={{
+          color: 'var(--shortkey-color)',
+          fontSize: 16,
+          lineHeight: '100%',
+        }}
+      >
         {'K'}
       </span>
     </div>
@@ -118,7 +124,7 @@ export const InfoIcon: React.FC<InfoIconProps> = ({
       height="16px"
       viewBox="0 -960 960 960"
       width="16px"
-      fill="#A0A0AB"
+      fill="var(--icon-color)"
     >
       <title>{infoMessage}</title>
       <path d="M444-288h72v-240h-72v240Zm35.79-312q15.21 0 25.71-10.29t10.5-25.5q0-15.21-10.29-25.71t-25.5-10.5q-15.21 0-25.71 10.29t-10.5 25.5q0 15.21 10.29 25.71t25.5 10.5Zm.49 504Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Zm-.28-72q130 0 221-91t91-221q0-130-91-221t-221-91q-130 0-221 91t-91 221q0 130 91 221t221 91Zm0-312Z" />
@@ -133,7 +139,7 @@ export const AsteriskIcon: React.FC = () => {
       height="12px"
       viewBox="0 -960 960 960"
       width="12px"
-      fill="#D92D20"
+      fill="var(--danger-color)"
     >
       <title>{'This field is required'}</title>
       <path d="M444-144v-249L268-217l-51-51 176-176H144v-72h249L217-692l51-51 176 176v-249h72v249l176-176 51 51-176 176h249v72H567l176 176-51 51-176-176v249h-72Z" />

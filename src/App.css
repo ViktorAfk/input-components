@@ -1,15 +1,29 @@
 * {
   box-sizing: border-box;
 }
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --main-color: #1a1a1e;
-  --placeholder--color: #70707b;
+  --input-background: #fff;
+  --placeholder-color: #70707b;
   --annotation-color: #51525C;
   --border-color: #d1d1d6;
   --danger-color: #D92D20;
+  --disabled-color: #D1D1D6;
+  --label-disabled-color: #70707B;
+  --icon-error: #D92D20;
+  --icon-color: #A0A0AB;
+  --icon-disabled: #D1D1D6;
   --default-border: 1px solid var(--border-color);
-  --error-border: 1px solid var(--danger-color);
+  --error-border: 1px solid #FDA29B;
+  --focus-border: #84caff;
+  --shortkey-border: #E4E4E7;
+  --shortkey-color: #70707B;
+  --annotation-error: #D92D20;
+  --annotation-disabled: #D1D1D6;
+  --border-disabled: #D1D1D6;
+  --shadow-border-focus: 0px 0px 0px 4px #2e90fa3d;
   --font-medium: 12px;
   --font-large: 14px;
   --padding-xs: 2px 12px;
@@ -24,17 +38,38 @@
   --min-width-xs: calc(var(--input-height-xs) * 1.5);
   --min-width-l: calc(var(--input-height-l) * 1.5);
   --min-width-xl: calc(var(--input-height-xl) * 1.5);
-
   /* label variables */
   --font-label-sm: 12px;
   --font-label-medium: 14px;
 }
 
+.dark--schema {
+  background-color: #1A1A1E;
+  --main-color: #FAFAFA;
+  --input-background: #131316;
+  --placeholder--color: #70707b;
+  --annotation-color: #A0A0AB;
+  --shortkey-color: #A0A0AB;
+  --border-color: #51525C;
+  --focus-border: #53B1FD;
+  --shadow-border-focus:0px 0px 0px 4px #2E90FA3D;
+  --danger-color: #F97066;
+  --disabled-color: #3F3F46;
+  --annotation-error: #F97066;
+  --annotation-disabled: #3F3F46;
+  --label-disabled-color: #A0A0AB;
+  --icon-color: #70707B;
+  --icon-error: #F04438;
+  --icon-disabled:   #70707B;
+  --border-disabled: #51525C;
+  --shortkey-border: #3F3F46;
+  --default-border: 1px solid var(--border-color);
+  --error-border: 1px solid var(--danger-color);
+}
 .container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
-  background-color: #fff;
 }

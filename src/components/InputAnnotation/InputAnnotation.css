@@ -12,10 +12,10 @@ p {
 }
 
 .input-annotation--error {
-  color: #D92D20;
+  color: var(--annotation-error);
 }
 
 
 .input-annotation--disabled {
-  color: var(--border-color);
+  color: var(--annotation-disabled);
 }
