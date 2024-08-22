@@ -24,6 +24,7 @@ const meta: Meta<typeof InputText> = {
       description: 'The value shows a user’s entered text.',
     },
     onChange: {
+      type: 'function',
       description: 'Function which receive event listener as an argument',
     },
     elementSize: {
