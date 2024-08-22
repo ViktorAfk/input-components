@@ -1,50 +1,15 @@
 # React + TypeScript + Vite
+To run the project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+First, you need to clone the repository from GitHub. You can find the clone URL on the repository page on GitHub; You need to install dependencies run 'pnpm instal'; Once the dependencies are installed, you can start the Vite development server: 'pnpm run dev' open this link (http://localhost:5173) and to run storybook 'pnpm storybook' open this link (http://localhost:6006) Includes:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+User can enter repo URL in the input on top of the page and press "Load". For example: https://github.com/facebook/react.
+App loads issues for the repo using Github API.
+App contains 3 columns:
+ToDo (all new issues)
+In Progress (opened issues with assignee)
+Done (closed issues)
+User able to drag-n-drop between the columns and change the order of issues.
+Current issue position (column and order) store between search and browser sessions.When the user loads issues for Repo1 -> Repo2 -> Repo1 he see all changes he did for Repo1.
+User able to visit the profile of the owner of the repo and visit the repo as well by links under the input.
+Technical Considerations: • React, TypeScript for building the components and managing state. • Redux toolkit as a state manager. • Chakra UI for styling, application is responsive. • Vitest and React Testing Library for testing.
